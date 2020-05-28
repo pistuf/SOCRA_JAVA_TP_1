@@ -16,4 +16,6 @@ public interface IOAdapter {
     String unit(Integer number);
 
     void write(String message);
+
+    void write_err(String msg);
 }

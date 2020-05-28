@@ -12,13 +12,18 @@ public class ConsoleAdapter implements IOAdapter {
     }
 
     @Override
+    public void write_err(String msg) {
+        System.err.println(msg);
+    }
+
+    @Override
     public boolean error_test(Integer number) {
         if (number <= 0) {
-            write("Too high");
+            write_err("Too low !");
             return false;
         }
         if (number > 3000) {
-            write("Too low");
+            write_err("Too high !");
             return false;
         }
         return true;
